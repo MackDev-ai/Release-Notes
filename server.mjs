@@ -2,7 +2,6 @@ import http from 'http';
 import { URL } from 'url';
 import { buildReleaseNotes, updateGoogleDoc } from './release-notes.mjs';
 
-const PORT = 3000;
 
 const HTML = `<!DOCTYPE html>
 <html lang="pl">
@@ -207,6 +206,13 @@ const server = http.createServer(async (req, res) => {
   res.end('Not found');
 });
 
+const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.RENDER_EXTERNAL_URL;
+
 server.listen(PORT, () => {
-  console.log(`\nRelease Notes UI: http://localhost:${PORT}\n`);
+  if (BASE_URL) {
+    console.log(`\nRelease Notes UI: ${BASE_URL}\n`);
+  } else {
+    console.log(`\nRelease Notes UI: http://localhost:${PORT}\n`);
+  }
 });

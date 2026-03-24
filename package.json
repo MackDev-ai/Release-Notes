@@ -1,0 +1,13 @@
+{
+  "name": "release-notes-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node release-notes.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "googleapis": "^140.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}

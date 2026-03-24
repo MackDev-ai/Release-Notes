@@ -357,16 +357,20 @@ async function updateGoogleDoc(data) {
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
-const tag = process.argv[2];
-if (!tag) {
-  console.error("\n❌ Podaj tag jako argument.");
-  console.error("   Przykład: node release-notes.mjs uat-version-20260316185950\n");
-  process.exit(1);
-}
+export { buildReleaseNotes, updateGoogleDoc };
 
-buildReleaseNotes(tag)
-  .then(updateGoogleDoc)
-  .catch(err => {
-    console.error("\n❌ Błąd:", err.message);
+const isCLI = process.argv[1]?.endsWith('release-notes.mjs');
+if (isCLI) {
+  const tag = process.argv[2];
+  if (!tag) {
+    console.error("\n❌ Podaj tag jako argument.");
+    console.error("   Przykład: node release-notes.mjs uat-version-20260316185950\n");
     process.exit(1);
-  });
+  }
+  buildReleaseNotes(tag)
+    .then(updateGoogleDoc)
+    .catch(err => {
+      console.error("\n❌ Błąd:", err.message);
+      process.exit(1);
+    });
+}

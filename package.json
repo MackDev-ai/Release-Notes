@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate": "node release-notes.mjs"
+    "generate": "node release-notes.mjs",
+    "ui": "node server.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

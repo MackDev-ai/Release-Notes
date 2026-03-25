@@ -19,7 +19,18 @@ const HTML = `<!DOCTYPE html>
       background: #f5f5f5;
       color: #222;
     }
-    h1 { font-size: 1.4rem; margin-bottom: 24px; }
+    h1 { font-size: 1.4rem; margin-bottom: 8px; }
+    .doc-header-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .doc-header-link:hover { text-decoration: underline; }
     label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #555; }
     input[type="text"] {
       width: 100%;
@@ -76,6 +87,10 @@ const HTML = `<!DOCTYPE html>
 </head>
 <body>
   <h1>Release Notes Generator</h1>
+  <a class="doc-header-link" href="https://docs.google.com/document/d/1QqBpKEL84Vx0BTkxlf8eD36evv09JFuJgwk9sqcB9OU/edit?tab=t.0#heading=h.ze6illkh64by" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    Otwórz dokument Release Notes
+  </a>
 
   <label for="tagInput">Tag wersji</label>
   <input id="tagInput" type="text" placeholder="uat-version-20260316185950" autocomplete="off" spellcheck="false" />

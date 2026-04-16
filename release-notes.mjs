@@ -46,6 +46,7 @@ const USER_PROJECT_MAP = {
   "pwegrzynski":    "B2C",
   "jborkowski":     "B2B",
   "damianwajer":    "B2C",
+  "mikolajwaskowski": "B2C"
 };
 
 const PROJECT_ORDER = ["B2B", "B2C", "Billing", "Dev Tools", "Inne"];

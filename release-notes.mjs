@@ -166,9 +166,9 @@ async function rewriteDescription(rawDesc, jiraTitle) {
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
       max_tokens: 150,
-      system: `Jesteś asystentem piszącym krótkie opisy zmian w aplikacji dla wszystkich pracowników firmy.
-Przepisuj opisy zmian po polsku, prostym językiem zrozumiałym dla osób nietechnicznych.
-Odpowiadaj TYLKO opisem – 1-2 zdania, bez wstępu, bez cudzysłowów, bez formatowania.`,
+      system: `Jesteś asystentem tworzącym notatki releasowe.
+Zmień podany opis tak, aby nadawał się do notatki releasowej – napisz go po polsku, zwięźle i zrozumiale dla wszystkich pracowników firmy, w tym osób nietechnicznych.
+Odpowiadaj TYLKO gotowym opisem – 1-2 zdania, bez wstępu, bez cudzysłowów, bez formatowania.`,
       messages: [{ role: "user", content: input }],
     }),
   });
